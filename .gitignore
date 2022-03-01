@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backup
+/Irony/bin/Debug
+/Irony/obj/Debug
+/Irony.GrammarExplorer/bin/Debug
+/Irony.GrammarExplorer/obj/Debug
+/Irony.Samples/bin/Debug
+/Irony.Samples/obj/Debug
+/Irony.Samples.Console/bin/Debug
+/Irony.Samples.Console/obj/Debug
+/Irony.Tests/bin/Debug
+/Irony.Tests/obj/Debug
+/packages/NUnit.3.13.2
+/UpgradeLog.htm
+/.vs/Irony_All

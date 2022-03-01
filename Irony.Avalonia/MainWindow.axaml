@@ -1,0 +1,88 @@
+<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:Class="Irony.Avalonia.MainWindow"
+		Title="Irony Grammar Explorer">
+	<StackPanel>
+		<Border BorderBrush="Black" BorderThickness="1" Margin="1,0,1,0">
+			<Grid HorizontalAlignment="Stretch"
+				  VerticalAlignment="Stretch"
+				  ColumnDefinitions="*,*,*"
+				  Margin="5,5,5,5">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Grammar:" VerticalAlignment="Center"/>
+					<ComboBox Width="150" />
+					<Button Content="..." />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal"
+							Grid.Column="1"
+							HorizontalAlignment="Right">
+					<TextBox Width="150" />
+					<Button Content="Find" />
+				</StackPanel>
+				<StackPanel Orientation="Horizontal"
+							Grid.Column="2"
+							Margin="5,0,0,0">
+					<TextBlock Text="Not Found"
+							   VerticalAlignment="Center"
+							   Foreground="Red" />
+				</StackPanel>
+
+			</Grid>
+		</Border>
+		<TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+			<TabItem Header="Terminals">
+				<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+					<TextBlock x:Name="txtTerms" TextWrapping="WrapWithOverflow" />
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="Non-Terminals">
+				<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+					<TextBlock x:Name="txtNonTerms" TextWrapping="WrapWithOverflow" />
+				</ScrollViewer>
+			</TabItem>
+
+			<TabItem Header="Parser States">
+				<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+					<TextBlock x:Name="txtParserStates" TextWrapping="WrapWithOverflow" />
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="Test"
+					 IsSelected="True">
+				<Grid ColumnDefinitions="2*, 4, *" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+					<Grid RowDefinitions="40, *" Margin="2,5,5,5"
+							HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						<Border BorderBrush="Black" BorderThickness="1"
+								HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+							<Grid ColumnDefinitions="*,*">
+								<CheckBox Margin="10,0,0,0"
+										  x:Name="chkDisableHighlighting"
+										  Content="Disable syntax highlighting"/>
+								<StackPanel Grid.Column="1"
+											Orientation="Horizontal"
+											HorizontalAlignment="Right">
+									<Button Content="Load..."/>
+									<Button Content="Parse"/>
+									<Button Content="Run"/>
+									<Button Content="->XML"/>
+								</StackPanel>
+							</Grid>
+						</Border>
+						<TextBox x:Name="txtSource"
+								 Grid.Row="1" AcceptsReturn="True"
+								 ScrollViewer.VerticalScrollBarVisibility="Auto"
+								 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+								 HorizontalAlignment="Stretch"/>
+					</Grid>
+					<GridSplitter Grid.Column="1" Background="Black" ResizeDirection="Columns"/>
+					<TabControl FontSize="10" Grid.Column="2">
+						<TabItem FontSize="14" Header="Parse Tree" />
+						<TabItem FontSize="14" Header="AST" />
+					</TabControl>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</StackPanel>
+</Window>
