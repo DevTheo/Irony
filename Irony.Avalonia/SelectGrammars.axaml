@@ -9,10 +9,21 @@
 		HorizontalAlignment="Stretch"
 		VerticalAlignment="Stretch"
 		ColumnDefinitions="*,*"
-		RowDefinitions="*,40">
-		<ListBox x:Name="lstGrammars"
-				 Grid.ColumnSpan="2">
+		RowDefinitions="*,40"
+		Margin="5,5,10,5">
 
+		<ListBox x:Name="lstGrammars"
+				 Grid.ColumnSpan="2"
+				 HorizontalAlignment="Stretch"
+				 VerticalAlignment="Stretch"
+				 Items="{Binding Items, Mode=OneWay}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" Content="{Binding Text, Mode=OneWay}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
 		</ListBox>
 		<StackPanel Orientation="Horizontal"
 					Grid.Column="0" Grid.Row="1"

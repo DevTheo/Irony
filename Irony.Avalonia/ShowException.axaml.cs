@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Irony.Avalonia.ViewModels;
 
 namespace Irony.Avalonia
 {
@@ -12,6 +13,8 @@ namespace Irony.Avalonia
 #if DEBUG
             this.AttachDevTools();
 #endif
+            DataContext = new ShowExceptionViewModel();
+
         }
 
         private void InitializeComponent()

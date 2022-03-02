@@ -16,6 +16,6 @@
 				 VerticalAlignment="Stretch"
 				 TextWrapping="WrapWithOverflow"
 				 IsReadOnly="True"
-				 Text="(txtException)" />
+				 Text="{Binding Message, Mode=OneWay}" />
 	</ScrollViewer>
 </Window>
