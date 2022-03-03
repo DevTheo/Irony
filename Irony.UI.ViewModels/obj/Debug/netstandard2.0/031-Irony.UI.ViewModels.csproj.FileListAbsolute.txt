@@ -1,0 +1,10 @@
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.ViewModels.deps.json
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.ViewModels.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.ViewModels.pdb
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.csproj.AssemblyReference.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.AssemblyInfoInputs.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.AssemblyInfo.cs
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.csproj.CoreCompileInputs.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.pdb

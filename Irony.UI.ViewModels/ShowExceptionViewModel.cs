@@ -1,8 +1,7 @@
-﻿using Avalonia.Controls;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 
-namespace Irony.Avalonia.ViewModels
+namespace Irony.UI.ViewModels
 {
     public class ShowExceptionViewModel : ObservableObject
     {

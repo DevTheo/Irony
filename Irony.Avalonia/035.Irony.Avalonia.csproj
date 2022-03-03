@@ -10,13 +10,14 @@
 		<None Remove=".gitignore" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="0.10.12" />
-		<PackageReference Include="Avalonia.Desktop" Version="0.10.12" />
+		<PackageReference Include="Avalonia" Version="0.10.13" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.13" />
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.12" />
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.13" />
 		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\Irony.UI.ViewModels\031-Irony.UI.ViewModels.csproj" />
 	  <ProjectReference Include="..\Irony\010.Irony.csproj" />
 	</ItemGroup>
 </Project>

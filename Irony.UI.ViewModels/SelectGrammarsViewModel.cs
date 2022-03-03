@@ -1,9 +1,8 @@
-﻿using Avalonia.Controls;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 
-namespace Irony.Avalonia.ViewModels
+namespace Irony.UI.ViewModels
 {
     public class SelectGrammarsViewModel : ObservableObject
     {
