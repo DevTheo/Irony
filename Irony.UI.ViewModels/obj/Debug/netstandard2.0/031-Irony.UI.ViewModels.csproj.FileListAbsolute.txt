@@ -8,3 +8,6 @@ C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.
 C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.csproj.CoreCompileInputs.cache
 C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.dll
 C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.pdb
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\Irony.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\Irony.pdb
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.ViewModels.csproj.CopyComplete

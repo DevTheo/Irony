@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "031-Irony.UI.ViewModels/1.0.0": {
         "dependencies": {
+          "010.Irony": "1.0.0",
           "Microsoft.Toolkit.Mvvm": "7.1.2",
           "NETStandard.Library": "2.0.3"
         },
@@ -101,6 +102,11 @@
             "fileVersion": "4.6.28619.1"
           }
         }
+      },
+      "010.Irony/1.0.0": {
+        "runtime": {
+          "Irony.dll": {}
+        }
       }
     }
   },
@@ -179,6 +185,11 @@
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "010.Irony/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

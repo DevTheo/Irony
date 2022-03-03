@@ -5,9 +5,9 @@ namespace Irony.UI.ViewModels
 {
     public class ShowExceptionViewModel : ObservableObject
     {
-        public ShowExceptionViewModel(bool isDesignMode)
+        public ShowExceptionViewModel(CommonData commonData)
         {
-            if (isDesignMode)
+            if (commonData.IsDesignMode)
             {
                 LoadDesignTimeData();
             }

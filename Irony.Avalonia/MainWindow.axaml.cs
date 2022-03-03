@@ -14,8 +14,9 @@ namespace Irony.Avalonia
 #if DEBUG
             this.AttachDevTools();
 #endif
-            DataContext = new GrammarExplorerViewModel(Design.IsDesignMode);
-
+            DataContext = Design.IsDesignMode ?
+                new GrammarExplorerViewModel(new CommonData { IsDesignMode = Design.IsDesignMode }) :
+                App.AppServices!.GetService(typeof(GrammarExplorerViewModel));
         }
 
         private void InitializeComponent()

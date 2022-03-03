@@ -113,6 +113,15 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "010.Irony/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/010.Irony.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/010.Irony.dll": {}
+        }
       }
     }
   },
@@ -561,10 +570,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "010.Irony/1.0.0": {
+      "type": "project",
+      "path": "../Irony/010.Irony.csproj",
+      "msbuildProject": "../Irony/010.Irony.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "010.Irony >= 1.0.0",
       "Microsoft.Toolkit.Mvvm >= 7.1.2",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -595,7 +610,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\src\\_dotNetCore\\Irony\\Irony\\010.Irony.csproj": {
+              "projectPath": "C:\\src\\_dotNetCore\\Irony\\Irony\\010.Irony.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

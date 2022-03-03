@@ -9,9 +9,9 @@ namespace Irony.UI.ViewModels
 {
     public class GrammarExplorerViewModel : ObservableObject
     {
-        public GrammarExplorerViewModel(bool isDesignMode)
+        public GrammarExplorerViewModel(CommonData commonData)
         {
-            if (isDesignMode)
+            if (commonData.IsDesignMode)
             {
                 LoadDesignTimeData();
             }

@@ -13,7 +13,9 @@ namespace Irony.Avalonia
 #if DEBUG
             this.AttachDevTools();
 #endif
-            DataContext = new SelectGrammarsViewModel(Design.IsDesignMode);
+            DataContext = Design.IsDesignMode ?
+                new SelectGrammarsViewModel(new CommonData { IsDesignMode = Design.IsDesignMode }) :
+                App.AppServices!.GetService(typeof(SelectGrammarsViewModel));
         }
 
         private void InitializeComponent()

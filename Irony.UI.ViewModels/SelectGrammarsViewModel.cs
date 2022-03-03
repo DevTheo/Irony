@@ -1,17 +1,24 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace Irony.UI.ViewModels
 {
     public class SelectGrammarsViewModel : ObservableObject
     {
-        public SelectGrammarsViewModel(bool isDesignMode)
+        public SelectGrammarsViewModel(CommonData commonData)
         {
-            if (isDesignMode)
+            if (commonData.IsDesignMode)
             {
                 LoadDesignTimeData();
             }
+            CheckAllCommand = new RelayCommand(CheckAll);
+            UncheckAllCommand = new RelayCommand(UncheckAll);
+
+            OkCommand = new RelayCommand(OkClick);
+            CancelCommand = new RelayCommand(CancelClick);
         }
 
         private void LoadDesignTimeData()
@@ -38,6 +45,36 @@ namespace Irony.UI.ViewModels
             get => _items;
             set => SetProperty(ref _items, value);
         }
+
+
+        public ICommand CheckAllCommand { get; }
+
+        private void CheckAll() => CheckUncheck(true);
+
+        public ICommand UncheckAllCommand { get; }
+        private void UncheckAll() => CheckUncheck(false);
+
+        public RelayCommand OkCommand { get; }
+        private void OkClick()
+        {
+
+        }
+
+        public RelayCommand CancelCommand { get; }
+        private void CancelClick()
+        {
+
+        }
+
+
+        private void CheckUncheck(bool checkAll)
+        {
+            foreach (var item in _items)
+            {
+                item.IsChecked = checkAll;
+            }
+        }
+
     }
 
     public class GrammarItem : ObservableObject

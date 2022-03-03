@@ -13,7 +13,9 @@ namespace Irony.Avalonia
 #if DEBUG
             this.AttachDevTools();
 #endif
-            DataContext = new ShowExceptionViewModel(Design.IsDesignMode);
+            DataContext = Design.IsDesignMode ?
+                new ShowExceptionViewModel(new CommonData { IsDesignMode = Design.IsDesignMode }) :
+                App.AppServices!.GetService(typeof(ShowExceptionViewModel));
 
         }
 

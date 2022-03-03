@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Irony\010.Irony.csproj" />
+  </ItemGroup>
+
 </Project>
