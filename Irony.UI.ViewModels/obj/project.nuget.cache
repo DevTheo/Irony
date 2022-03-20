@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YjIiT9yf0onwfb1EnVIA0cIt/O7KPol8m8GyFJH5oLfoGZm0rC7aMUhEEWRPF672/GZsOFGwkJV3wyAdvYj8QQ==",
+  "dgSpecHash": "tXHyUGnVYh7k61iXF0UVzHC5VfokR5ZNxAz9ezhUJFNRY7uG0wMKwJR3b+XBXHKwf1mJyJwR5OUFJGmdGUsYSQ==",
   "success": true,
-  "projectFilePath": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.ViewModels.csproj",
+  "projectFilePath": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.GrammarExplorer.ViewModels.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jkimb\\.nuget\\packages\\communitytoolkit.mvvm\\7.1.2\\communitytoolkit.mvvm.7.1.2.nupkg.sha512",
     "C:\\Users\\jkimb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\jkimb\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\jkimb\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
     "C:\\Users\\jkimb\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\jkimb\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\jkimb\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

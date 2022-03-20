@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Irony.Parsing;
+using System;
 
 namespace Irony.UI.ViewModels
 {
-    public class CommonData
+    public partial class CommonData : ObservableObject
     {
         public bool IsDesignMode { get; set; } = true;
+
+        [ObservableProperty]
+        private Grammar _LoadedGrammar;
+
+        internal static void ApplicationDoEvents()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

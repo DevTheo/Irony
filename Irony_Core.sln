@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Solution Items", "00-Solution Items", "{05F0AC0D-AD43-45B4-8A98-00C54CF5280D}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "035-Irony.GrammarExplorer.Avalonia", "Irony.GrammarExplorer.Avalonia\035-Irony.GrammarExplorer.Avalonia.csproj", "{9F213582-0726-4A73-A388-F03119E138B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "030-UIs", "030-UIs", "{B224E6E8-175F-432E-B170-9FDF74403B75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "010-Core", "010-Core", "{875FF652-030F-4FD2-BEFE-931026072A30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "020-Samples", "020-Samples", "{6B5C89F0-D9EB-4FCE-9634-673D5D345DC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "031-Irony.UI.GrammarExplorer.ViewModels", "Irony.UI.ViewModels\031-Irony.UI.GrammarExplorer.ViewModels.csproj", "{EF811347-875D-4ACE-980D-DA63D0AC2470}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010-Irony.Core", "Irony.Core\010-Irony.Core.csproj", "{458A41B3-967C-4D63-B380-4CCD818705D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "020.Irony.Samples.Core", "Irony.Samples.Core\020.Irony.Samples.Core.csproj", "{6CF706E0-81E9-46B4-9FDF-3066D409C07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "036-Irony.SampleExplorer.Avalonia", "Irony.SampleExplorer.Avalonia\036-Irony.SampleExplorer.Avalonia.csproj", "{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		FxCop|Any CPU = FxCop|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Silverlight Debug|Any CPU = Silverlight Debug|Any CPU
+		Silverlight Release|Any CPU = Silverlight Release|Any CPU
+		SpecSharp|Any CPU = SpecSharp|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F213582-0726-4A73-A388-F03119E138B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.FxCop|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.FxCop|Any CPU.Build.0 = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Silverlight Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.Silverlight Release|Any CPU.Build.0 = Release|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.SpecSharp|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F213582-0726-4A73-A388-F03119E138B3}.SpecSharp|Any CPU.Build.0 = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.FxCop|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.FxCop|Any CPU.Build.0 = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Silverlight Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.Silverlight Release|Any CPU.Build.0 = Release|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.SpecSharp|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF811347-875D-4ACE-980D-DA63D0AC2470}.SpecSharp|Any CPU.Build.0 = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.FxCop|Any CPU.ActiveCfg = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.FxCop|Any CPU.Build.0 = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Silverlight Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.Silverlight Release|Any CPU.Build.0 = Release|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.SpecSharp|Any CPU.ActiveCfg = Debug|Any CPU
+		{458A41B3-967C-4D63-B380-4CCD818705D1}.SpecSharp|Any CPU.Build.0 = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.FxCop|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.FxCop|Any CPU.Build.0 = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Silverlight Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.Silverlight Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.SpecSharp|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B}.SpecSharp|Any CPU.Build.0 = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.FxCop|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.FxCop|Any CPU.Build.0 = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Silverlight Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Silverlight Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Silverlight Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.Silverlight Release|Any CPU.Build.0 = Release|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.SpecSharp|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014}.SpecSharp|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F213582-0726-4A73-A388-F03119E138B3} = {B224E6E8-175F-432E-B170-9FDF74403B75}
+		{EF811347-875D-4ACE-980D-DA63D0AC2470} = {B224E6E8-175F-432E-B170-9FDF74403B75}
+		{458A41B3-967C-4D63-B380-4CCD818705D1} = {875FF652-030F-4FD2-BEFE-931026072A30}
+		{6CF706E0-81E9-46B4-9FDF-3066D409C07B} = {6B5C89F0-D9EB-4FCE-9634-673D5D345DC5}
+		{9D6A1D4A-49AC-4480-8FCE-C2144A6E0014} = {B224E6E8-175F-432E-B170-9FDF74403B75}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30D94E64-717E-4E05-B00A-224FC3DFC96E}
+	EndGlobalSection
+EndGlobal

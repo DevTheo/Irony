@@ -1,12 +1,13 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Irony.UI.ViewModels.Models;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace Irony.UI.ViewModels
 {
-    public class SelectGrammarsViewModel : ObservableObject
+    public partial class SelectGrammarsViewModel : ObservableObject
     {
         public SelectGrammarsViewModel(CommonData commonData)
         {
@@ -14,16 +15,11 @@ namespace Irony.UI.ViewModels
             {
                 LoadDesignTimeData();
             }
-            CheckAllCommand = new RelayCommand(CheckAll);
-            UncheckAllCommand = new RelayCommand(UncheckAll);
-
-            OkCommand = new RelayCommand(OkClick);
-            CancelCommand = new RelayCommand(CancelClick);
         }
 
         private void LoadDesignTimeData()
         {
-            _items.AddRange(new[] {
+            foreach (var item in new[] {
                 new GrammarItem { Text = "Basic" },
                 new GrammarItem { Text = "C#" },
                 new GrammarItem { Text = "C++" },
@@ -34,38 +30,20 @@ namespace Irony.UI.ViewModels
                 new GrammarItem { Text = "Ruby" },
                 new GrammarItem { Text = "Rust" },
                 new GrammarItem { Text = "Scheme" },
-                new GrammarItem { Text = "Sql", IsChecked=true }
-            });
+                new GrammarItem { Text = "Sql", IsChecked=true } })
+
+                Items.Add(item);
 
         }
 
-        private List<GrammarItem> _items = new List<GrammarItem>();
-        public List<GrammarItem> Items
-        {
-            get => _items;
-            set => SetProperty(ref _items, value);
-        }
+        [ObservableProperty]
+        private ObservableCollection<GrammarItem> _items = new ObservableCollection<GrammarItem>();
 
 
-        public ICommand CheckAllCommand { get; }
-
+        [ICommand]
         private void CheckAll() => CheckUncheck(true);
-
-        public ICommand UncheckAllCommand { get; }
+        [ICommand]
         private void UncheckAll() => CheckUncheck(false);
-
-        public RelayCommand OkCommand { get; }
-        private void OkClick()
-        {
-
-        }
-
-        public RelayCommand CancelCommand { get; }
-        private void CancelClick()
-        {
-
-        }
-
 
         private void CheckUncheck(bool checkAll)
         {
@@ -75,23 +53,9 @@ namespace Irony.UI.ViewModels
             }
         }
 
-    }
-
-    public class GrammarItem : ObservableObject
-    {
-        private bool _isChecked = false;
-        public bool IsChecked
-        {
-            get => _isChecked;
-            set => SetProperty(ref _isChecked, value);
-        }
-
-        private string _text;
-        public string Text
-        {
-            get => _text;
-            set => SetProperty(ref _text, value);
-        }
-
+        [ICommand]
+        private void Ok() { }
+        [ICommand]
+        private void Cancel() { }
     }
 }

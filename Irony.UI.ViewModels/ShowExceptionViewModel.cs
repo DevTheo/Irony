@@ -1,9 +1,8 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Irony.UI.ViewModels
 {
-    public class ShowExceptionViewModel : ObservableObject
+    public partial class ShowExceptionViewModel : ObservableObject
     {
         public ShowExceptionViewModel(CommonData commonData)
         {
@@ -18,12 +17,7 @@ namespace Irony.UI.ViewModels
             _message = "(txtException)";
         }
 
-
+        [ObservableProperty]
         private string _message = "";
-        public string Message
-        {
-            get => _message;
-            set => SetProperty(ref _message, value);
-        }
     }
 }

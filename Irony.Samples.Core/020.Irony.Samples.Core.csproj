@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Irony</RootNamespace>
+		<AssemblyName>Irony.Core</AssemblyName>
+		<LangVersion>10.0</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="SourceSamples\c#\bottles-v11-long.cs" />
+		<Compile Remove="SourceSamples\c#\bottles-v11-short.cs" />
+		<Compile Remove="SourceSamples\c#\bottles-v20.cs" />
+		<Compile Remove="SourceSamples\c#\bottles-v30.cs" />
+		<Compile Remove="SourceSamples\c#\escapes_in_IDs.cs" />
+		<Compile Remove="SourceSamples\c#\Irony_GrammarDataBuilder.cs" />
+		<Compile Remove="SourceSamples\c#\TestLessThanOp.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="SourceSamples\c#\bottles-v11-long.cs" />
+		<None Include="SourceSamples\c#\bottles-v11-short.cs" />
+		<None Include="SourceSamples\c#\bottles-v20.cs" />
+		<None Include="SourceSamples\c#\bottles-v30.cs" />
+		<None Include="SourceSamples\c#\escapes_in_IDs.cs" />
+		<None Include="SourceSamples\c#\Irony_GrammarDataBuilder.cs" />
+		<None Include="SourceSamples\c#\TestLessThanOp.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Irony.Core\010-Irony.Core.csproj" />
+	</ItemGroup>
+
+</Project>

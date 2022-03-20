@@ -1,0 +1,13 @@
+C:\src\_dotNetCore\Irony\Irony.Core\bin\Debug\netstandard2.0\Irony.Core.deps.json
+C:\src\_dotNetCore\Irony\Irony.Core\bin\Debug\netstandard2.0\Irony.Core.dll
+C:\src\_dotNetCore\Irony\Irony.Core\bin\Debug\netstandard2.0\Irony.Core.pdb
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.csproj.AssemblyReference.cache
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\Irony.Microsoft.MathResources.resources
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\Irony.Resources.resources
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.csproj.GenerateResource.cache
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.AssemblyInfoInputs.cache
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.AssemblyInfo.cs
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\010-Irony.Core.csproj.CoreCompileInputs.cache
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\Irony.Core.dll
+C:\src\_dotNetCore\Irony\Irony.Core\obj\Debug\netstandard2.0\Irony.Core.pdb

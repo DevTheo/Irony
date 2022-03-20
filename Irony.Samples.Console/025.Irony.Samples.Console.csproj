@@ -59,16 +59,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Irony.Samples\020.Irony.Samples.csproj">
-      <Project>{AD263C0B-99D3-40A9-9DBF-9086CC524A0B}</Project>
-      <Name>020.Irony.Samples</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Irony\010.Irony.csproj">
-      <Project>{D81F5C91-D7DB-46E5-BC99-49488FB6814C}</Project>
-      <Name>010.Irony</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Irony</RootNamespace>
+		<AssemblyName>Irony.Core</AssemblyName>
+		<BaseIntermediateOutputPath>core-obj\</BaseIntermediateOutputPath>
+		<LangVersion>10.0</LangVersion>
+		<BaseOutputPath>core-bin\</BaseOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Irony\Resources.Designer.cs" Link="Resources.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\Irony\Resources.resx" Link="Resources.resx" />
+	</ItemGroup>
+
+</Project>

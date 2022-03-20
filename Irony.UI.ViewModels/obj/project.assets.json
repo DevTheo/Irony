@@ -2,6 +2,20 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "CommunityToolkit.Mvvm/7.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Memory": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/CommunityToolkit.Mvvm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommunityToolkit.Mvvm.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -21,20 +35,6 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
-        }
-      },
-      "Microsoft.Toolkit.Mvvm/7.1.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
-          "System.ComponentModel.Annotations": "5.0.0",
-          "System.Memory": "4.5.4"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -114,18 +114,45 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "010.Irony/1.0.0": {
+      "Irony.Core/1.0.0": {
         "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/010.Irony.dll": {}
+          "bin/placeholder/Irony.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/010.Irony.dll": {}
+          "bin/placeholder/Irony.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
+    "CommunityToolkit.Mvvm/7.1.2": {
+      "sha512": "/zEpNH3FIBFY2iZRBi+S3Sia3q2yJgy1IQHnWRW7MdhQIe3IGcA1TGqJdbtjiJBmNy4v7kkPdNzgYlvvNDjXZg==",
+      "type": "package",
+      "path": "communitytoolkit.mvvm/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Mvvm.SourceGenerators.pdb",
+        "analyzers/dotnet/cs/CommunityToolkit.Mvvm.SourceGenerators.xml",
+        "communitytoolkit.mvvm.7.1.2.nupkg.sha512",
+        "communitytoolkit.mvvm.nuspec",
+        "lib/net5.0/CommunityToolkit.Mvvm.dll",
+        "lib/net5.0/CommunityToolkit.Mvvm.pdb",
+        "lib/net5.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
       "sha512": "W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
       "type": "package",
@@ -161,32 +188,6 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
-      ]
-    },
-    "Microsoft.Toolkit.Mvvm/7.1.2": {
-      "sha512": "tUQn6ar9oP7kmYaZ6pWabxpQaqw95Bsf+GG7prEL0y5MV5F60z76lI/Ppps9zcTqwd7e5CrdZBcdfor9WuvohA==",
-      "type": "package",
-      "path": "microsoft.toolkit.mvvm/7.1.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "License.md",
-        "ThirdPartyNotices.txt",
-        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.dll",
-        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.pdb",
-        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.xml",
-        "lib/net5.0/Microsoft.Toolkit.Mvvm.dll",
-        "lib/net5.0/Microsoft.Toolkit.Mvvm.pdb",
-        "lib/net5.0/Microsoft.Toolkit.Mvvm.xml",
-        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.dll",
-        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.pdb",
-        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.xml",
-        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.dll",
-        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.pdb",
-        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.xml",
-        "microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
-        "microsoft.toolkit.mvvm.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -571,16 +572,16 @@
         "version.txt"
       ]
     },
-    "010.Irony/1.0.0": {
+    "Irony.Core/1.0.0": {
       "type": "project",
-      "path": "../Irony/010.Irony.csproj",
-      "msbuildProject": "../Irony/010.Irony.csproj"
+      "path": "../Irony.Core/010-Irony.Core.csproj",
+      "msbuildProject": "../Irony.Core/010-Irony.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "010.Irony >= 1.0.0",
-      "Microsoft.Toolkit.Mvvm >= 7.1.2",
+      "CommunityToolkit.Mvvm >= 7.1.2",
+      "Irony.Core >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -590,9 +591,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.ViewModels.csproj",
-      "projectName": "031-Irony.UI.ViewModels",
-      "projectPath": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.ViewModels.csproj",
+      "projectUniqueName": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.GrammarExplorer.ViewModels.csproj",
+      "projectName": "031-Irony.UI.GrammarExplorer.ViewModels",
+      "projectPath": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\031-Irony.UI.GrammarExplorer.ViewModels.csproj",
       "packagesPath": "C:\\Users\\jkimb\\.nuget\\packages\\",
       "outputPath": "C:\\src\\_dotNetCore\\Irony\\Irony.UI.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
@@ -611,8 +612,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\src\\_dotNetCore\\Irony\\Irony\\010.Irony.csproj": {
-              "projectPath": "C:\\src\\_dotNetCore\\Irony\\Irony\\010.Irony.csproj"
+            "C:\\src\\_dotNetCore\\Irony\\Irony.Core\\010-Irony.Core.csproj": {
+              "projectPath": "C:\\src\\_dotNetCore\\Irony\\Irony.Core\\010-Irony.Core.csproj"
             }
           }
         }
@@ -627,7 +628,7 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
-          "Microsoft.Toolkit.Mvvm": {
+          "CommunityToolkit.Mvvm": {
             "target": "Package",
             "version": "[7.1.2, )"
           },

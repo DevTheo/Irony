@@ -1,0 +1,13 @@
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.deps.json
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.pdb
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\Irony.Core.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\bin\Debug\netstandard2.0\Irony.Core.pdb
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.csproj.AssemblyReference.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.AssemblyInfoInputs.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.AssemblyInfo.cs
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.csproj.CoreCompileInputs.cache
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.csproj.CopyComplete
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.dll
+C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\obj\Debug\netstandard2.0\031-Irony.UI.GrammarExplorer.ViewModels.pdb

@@ -1,0 +1,11 @@
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\bin\Debug\netstandard2.0\Irony.Core.deps.json
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\bin\Debug\netstandard2.0\Irony.Core.dll
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\bin\Debug\netstandard2.0\Irony.Core.pdb
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.csproj.AssemblyReference.cache
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.AssemblyInfoInputs.cache
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.AssemblyInfo.cs
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.csproj.CoreCompileInputs.cache
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\020.Irony.Samples.Core.csproj.CopyComplete
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\Irony.Core.dll
+C:\src\_dotNetCore\Irony\Irony.Samples.Core\obj\Debug\netstandard2.0\Irony.Core.pdb

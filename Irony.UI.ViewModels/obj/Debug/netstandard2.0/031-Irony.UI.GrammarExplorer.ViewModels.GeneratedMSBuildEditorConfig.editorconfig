@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Irony.UI.ViewModels
+build_property.ProjectDir = C:\src\_dotNetCore\Irony\Irony.UI.ViewModels\
