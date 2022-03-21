@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Irony.SampleExplorer.Avalonia.ViewModels;
 
 namespace Irony.SampleExplorer.Avalonia
 {
@@ -8,6 +9,8 @@ namespace Irony.SampleExplorer.Avalonia
     {
         public MainWindow()
         {
+            DataContext = new SampleExplorerViewModel(new CommonUiSettings());
+
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
