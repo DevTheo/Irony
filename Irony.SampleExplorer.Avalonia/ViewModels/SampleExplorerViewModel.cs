@@ -19,12 +19,17 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
             if (commonUiSettings.IsInDesignMode)
             {
                 // Set up viewmodel with dummy data
-                ErrorsAreVisible = false;
-                TreeviewIsVisible = true;
+                //ErrorsAreVisible = false;
+                // TreeviewIsVisible = true;
                 //ParseTextIsEnabled = false;
                 //GoButtonIsEnabled = false;
 
                 ErrorsText = "There was an error!";
+                ParseTree.Add(new TreeNodeData()
+                {
+                    Text = "(Empty)"
+                });
+
 
                 Languages.Add(new GrammarItem(null)
                 {
@@ -66,20 +71,24 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
         }
 
         #region visibility
-        [ObservableProperty]
-        private bool _errorsAreVisible;
-        [ObservableProperty]
-        private bool _treeviewIsVisible;
+        public bool ErrorsAreVisible => !string.IsNullOrWhiteSpace(ErrorsText);
+
+        public bool TreeviewIsVisible => true; //!ParseTree.Any();
         #endregion
 
         #region Enabled
         public bool ParseTextIsEnabled => SelectedGrammarItem != null;
 
-        private bool GoButtonIsEnabled => !string.IsNullOrWhiteSpace(ParseText);
+        public bool GoButtonIsEnabled => !string.IsNullOrWhiteSpace(ParseText);
         #endregion
 
         [ObservableProperty]
         private ObservableCollection<GrammarItem> _languages = new ObservableCollection<GrammarItem>();
+
+
+        [ObservableProperty]
+        [AlsoNotifyChangeFor(nameof(TreeviewIsVisible))]
+        private ObservableCollection<TreeNodeData> _parseTree = new ObservableCollection<TreeNodeData>(); // EmptyTree();
 
         [ObservableProperty]
         [AlsoNotifyChangeFor(nameof(ParseTextIsEnabled))]
@@ -88,7 +97,9 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
         [ObservableProperty]
         [AlsoNotifyChangeFor(nameof(GoButtonIsEnabled))]
         private string _parseText;
+
         [ObservableProperty]
+        [AlsoNotifyChangeFor(nameof(ErrorsAreVisible))]
         private string _errorsText;
 
         [ICommand]
@@ -98,9 +109,85 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
             {
                 return;
             }
+            ParseTree.Clear();
             var grammar = SelectedGrammarItem!.GetGrammar();
-            // TODO: Parse text
-            // and retrieve AST Tree (I think)
+            if (grammar == null)
+            {
+                return;
+            }
+            var language = new LanguageData(grammar);
+            var parser = new Parser(language);
+            if (parser == null || !parser.Language.CanParse())
+            {
+                return;
+            }
+            GC.Collect(); //to avoid disruption of perf times with occasional collections
+                          //parser.Context.SetOption(ParseOptions.TraceParser, chkParserTrace.Checked);
+            try
+            {
+                parser.Parse(ParseText, "<source>");
+            }
+            catch (Exception ex)
+            {
+                _errorsText = ex.Message;
+                //gridCompileErrors.Rows.Add(null, ex.Message, null);
+                throw;
+            }
+            finally
+            {
+                ParseTree.Add(TreeNodeData.FromParseTree(parser.Context.CurrentParseTree));
+
+                //ShowCompilerErrors();
+                //if (chkParserTrace.Checked)
+                //{
+                //    ShowParseTrace();
+                //}
+                //ShowCompileStats();
+                //ShowParseTree();
+                //ShowAstTree();
+            }
+
         }
+    }
+
+    public partial class TreeNodeData : ObservableObject
+    {
+        public static TreeNodeData FromParseTree(ParseTree tree)
+        {
+            var root = new TreeNodeData()
+            {
+                ParseTree = tree,
+                Text = tree.Root?.ToString() ?? "(Root)"
+            };
+            if (tree.Root != null && tree.Root.ChildNodes != null && tree.Root.ChildNodes.Count > 0)
+            {
+                root.LoadChildren(tree.Root.ChildNodes);
+            }
+            return root;
+        }
+
+        internal void LoadChildren(ParseTreeNodeList nodes)
+        {
+            foreach (var node in nodes)
+            {
+                var child = new TreeNodeData()
+                {
+                    Text = node.ToString()
+                };
+                if (node.ChildNodes != null && node.ChildNodes.Count > 0)
+                {
+                    child.LoadChildren(node.ChildNodes);
+                }
+                Children.Add(child);
+            }
+        }
+
+        [ObservableProperty]
+        private string? _text;
+
+        public ParseTree? ParseTree;
+
+        [ObservableProperty]
+        private ObservableCollection<TreeNodeData> _children = new ObservableCollection<TreeNodeData>();
     }
 }

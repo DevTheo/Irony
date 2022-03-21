@@ -37,6 +37,7 @@
 				AcceptsTab="True"
 				TextWrapping="NoWrap"
 				Grid.Row="1"
+				Text="{Binding ParseText, Mode=TwoWay}"
 				IsEnabled="{Binding ParseTextIsEnabled, Mode=OneWay}"
 				/>
 
@@ -48,17 +49,27 @@
 				IsEnabled="{Binding GoButtonIsEnabled, Mode=OneWay}"
 				/>
 		</Grid>
-		<Grid Grid.Column="2" Margin="4,2,2,2">
+		<Grid Grid.Column="2" Margin="4,2,2,2" RowDefinitions="*, Auto">
 			<TreeView
 				x:Name="tvParseData"
 				IsVisible="{Binding TreeviewIsVisible, Mode=OneWay}"
-				/>
+				Items="{Binding ParseTree, Mode=OneWay}"
+				>
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate ItemsSource="{Binding Children, Mode=OneWay}">
+						<TextBlock Text="{Binding Text, Mode=OneWay}" />
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
 			<TextBox
 				x:Name="txtErrors"
 				Foreground="Red"
 				IsReadOnly="true"
 				IsVisible="{Binding ErrorsAreVisible, Mode=OneWay}"
 				Text="{Binding ErrorsText, Mode=OneWay}"
+				Height="100"
+				AcceptsReturn="true"
+				Grid.Row="1"
 				/>
 		</Grid>
 		<GridSplitter
