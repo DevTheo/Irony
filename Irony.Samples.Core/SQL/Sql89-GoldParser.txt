@@ -1,5 +1,5 @@
 ﻿! -----------------------------------------------------------------------------------
-! SQL '89
+! SQL '92
 !
 ! SQL (Structured Query Language)
 !
@@ -19,14 +19,17 @@
 ! Update:
 !   02/17/2005
 !     Added "NULL" to the <Value> rule, I also added more comments to the grammar
+!   03/25/2021
+!     Starting a more modern SQL (Sql 92); No guarantees this matches the exact 
+!     spec
 !
 ! Note: This is an ad hoc version of the language. If there are any flaws, please 
 ! visit www.devincook.com/goldparser
 ! -----------------------------------------------------------------------------------
 
-"Name"         = 'SQL 89'
-"Version"      = '1989'
-"About"        = 'This is the ANSI 89 version of SQL. Variations are used by'
+"Name"         = 'SQL 92'
+"Version"      = '1992'
+"About"        = 'This is the ANSI 92 version of SQL. Variations are used by'
                | 'Oracle, Microsoft and most other database developers'
 
 "Start Symbol" = <Query>
@@ -170,7 +173,10 @@ Id             = ({Letter}{Id Ch Standard}* | '['{Id Ch Extended}+']')  ('.'({Le
 <Into Clause>   ::= INTO Id
                   |
 
-<From Clause>   ::= FROM <Id List> <Join Chain>
+<From Clause>   ::= FROM <Id List> <TABLE_ALIAS> <Join Chain>
+                  | FROM <Id List> ' AS ' <TABLE_ALIAS> <Join Chain>
+                  | FROM <Id List> ' as ' <TABLE_ALIAS> <Join Chain>
+                  | FROM <Id List> <Join Chain>
 
 <Join Chain>    ::= <Join> <Join Chain>
                   |
@@ -179,6 +185,18 @@ Id             = ({Letter}{Id Ch Standard}* | '['{Id Ch Extended}+']')  ('.'({Le
                   | LEFT  JOIN <Id List> ON Id '=' Id                  
                   | RIGHT JOIN <Id List> ON Id '=' Id                  
                   |       JOIN <Id List> ON Id '=' Id                  
+                  | INNER JOIN <Id List> <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | LEFT  JOIN <Id List> <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | RIGHT JOIN <Id List> <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
+                  |       JOIN <Id List> <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
+                  | INNER JOIN <Id List> 'AS' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | LEFT  JOIN <Id List> 'AS' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | RIGHT JOIN <Id List> 'AS' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
+                  |       JOIN <Id List> 'AS' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
+                  | INNER JOIN <Id List> 'as' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | LEFT  JOIN <Id List> 'as' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id
+                  | RIGHT JOIN <Id List> 'as' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
+                  |       JOIN <Id List> 'as' <TABLE_ALIAS> ON <TABLE_ALIAS> '.' Id '=' <TABLE_ALIAS> '.' Id                  
 
 
 <Where Clause>  ::= WHERE <Expression>

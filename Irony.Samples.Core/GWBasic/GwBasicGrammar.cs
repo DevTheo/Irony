@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using Irony.Parsing;
 
-namespace Irony.Samples {
-  /// <summary>
+namespace Irony.Samples
+{
+    /// <summary>
     /// This class defines the Grammar for the GwBASIC language.
     /// (Not complete.)
     /// </summary>
@@ -14,44 +15,45 @@ namespace Irony.Samples {
     /// or
     /// http://www.geocities.com/KindlyRat/GWBASIC_Help.zip
     /// </remarks>
-  [Language("GwBasic", "1.0", "Sample GW Basic grammar")]
-  public class GWBasicGrammar : Grammar  { 
+    [Language("GwBasic", "1.0", "Sample GW Basic grammar")]
+    public class GWBasicGrammar : Grammar
+    {
 
         public GWBasicGrammar() : base(false)  // BASIC is not case sensitive...
         {
-          this.GrammarComments = "This grammar uses one new Irony feature - Scanner-Parser link. Parser helps Scanner to disambiguate " +
-                             "similar but different token types when more than one terminal matches the current input char.\r\n" +
-                             "See comments in GwBasicGrammar.cs file.";
-          /*
-           Scanner-Parser link. 
-           The grammar defines 3 terminals for numbers: number, lineNumber and fileNumber. All three return decimal 
-           digits in GetFirsts() method. So when current input is a digit, the scanner has 3 potential candidate terminals
-           to match the input. However, because each of the 3 terminals can appear in specific "places" in grammar, 
-           the parser is able to assist scanner to pick the correct terminal, depending on the current parser state. 
-           The disambiguation happens in Scanner.SelectTerminals method. When the terminal list for current input char
-           has more than 1 terminal, the scanner code gets the current parser state from core parser (through compilerContext), 
-           and then checks the terminals agains the ExpectedTerms set in the parser state. 
-           As you might see in Grammar Explorer, the conflict is resolved successfully. 
-           */
+            this.GrammarComments = "This grammar uses one new Irony feature - Scanner-Parser link. Parser helps Scanner to disambiguate " +
+                               "similar but different token types when more than one terminal matches the current input char.\r\n" +
+                               "See comments in GwBasicGrammar.cs file.";
+            /*
+             Scanner-Parser link. 
+             The grammar defines 3 terminals for numbers: number, lineNumber and fileNumber. All three return decimal 
+             digits in GetFirsts() method. So when current input is a digit, the scanner has 3 potential candidate terminals
+             to match the input. However, because each of the 3 terminals can appear in specific "places" in grammar, 
+             the parser is able to assist scanner to pick the correct terminal, depending on the current parser state. 
+             The disambiguation happens in Scanner.SelectTerminals method. When the terminal list for current input char
+             has more than 1 terminal, the scanner code gets the current parser state from core parser (through compilerContext), 
+             and then checks the terminals agains the ExpectedTerms set in the parser state. 
+             As you might see in Grammar Explorer, the conflict is resolved successfully. 
+             */
 
             //Terminals
             var lineNumber = new NumberLiteral("LINE_NUMBER", NumberOptions.IntOnly);
             var fileNumber = new NumberLiteral("FILE_NUMBER", NumberOptions.IntOnly);
-            
+
             var number = new NumberLiteral("NUMBER", NumberOptions.AllowStartEndDot);
             //ints that are too long for int32 are converted to int64
-            number.DefaultIntTypes = new TypeCode[] {TypeCode.Int32, TypeCode.Int64};
-            number.AddExponentSymbols("eE", TypeCode.Single); 
+            number.DefaultIntTypes = new TypeCode[] { TypeCode.Int32, TypeCode.Int64 };
+            number.AddExponentSymbols("eE", TypeCode.Single);
             number.AddExponentSymbols("dD", TypeCode.Double);
             number.AddSuffix("!", TypeCode.Single);
-            number.AddSuffix("#", TypeCode.Double); 
+            number.AddSuffix("#", TypeCode.Double);
 
             var variable = new IdentifierTerminal("Identifier");
             variable.AddSuffix("$", TypeCode.String);
-            variable.AddSuffix("%", TypeCode.Int32); 
+            variable.AddSuffix("%", TypeCode.Int32);
             variable.AddSuffix("!", TypeCode.Single);
-            variable.AddSuffix("#", TypeCode.Double); 
-          
+            variable.AddSuffix("#", TypeCode.Double);
+
             var stringLiteral = new StringLiteral("STRING", "\"", StringOptions.None);
             //Important: do not add comment term to base.NonGrammarTerminals list - we do use this terminal in grammar rules
             var userFunctionName = variable;
@@ -130,7 +132,7 @@ namespace Irony.Samples {
             // A statement list is 1 or more statements separated by the ':' character
             LINE_CONTENT_OPT.Rule = Empty | IF_STMT | STATEMENT_LIST;
             STATEMENT_LIST.Rule = MakePlusRule(STATEMENT_LIST, colon, STATEMENT);
-            COMMENT_OPT.Rule = short_comment | comment | Empty; 
+            COMMENT_OPT.Rule = short_comment | comment | Empty;
 
             // A statement can be one of a number of types
             STATEMENT.Rule = ASSIGN_STMT | PRINT_STMT | INPUT_STMT | OPEN_STMT | CLOSE_STMT
@@ -161,7 +163,7 @@ namespace Irony.Samples {
             THEN_CLAUSE.Rule = "then" + STATEMENT_LIST | GOTO_STMT;
 
             //Inject PreferShift hint here to explicitly set shift as preferred action. Suppresses warning message about conflict. 
-            ELSE_CLAUSE_OPT.Rule = Empty | PreferShiftHere()  + "else" + STATEMENT_LIST;
+            ELSE_CLAUSE_OPT.Rule = Empty | PreferShiftHere() + "else" + STATEMENT_LIST;
 
             GOTO_STMT.Rule = "goto" + lineNumber;
             GOSUB_STMT.Rule = "gosub" + lineNumber;
@@ -177,7 +179,7 @@ namespace Irony.Samples {
             RANDOMIZE_STMT.Rule = "randomize" + EXPR;
 
             // An expression is a number, or a variable, a string, or the result of a binary comparison.
-            EXPR.Rule = number | variable | FUN_CALL | stringLiteral | BINARY_EXPR 
+            EXPR.Rule = number | variable | FUN_CALL | stringLiteral | BINARY_EXPR
                       | "(" + EXPR + ")" | UNARY_EXPR;
             BINARY_EXPR.Rule = EXPR + BINARY_OP + EXPR;
             UNARY_EXPR.Rule = SIGN + EXPR;
@@ -211,17 +213,18 @@ namespace Irony.Samples {
 
             //Punctuation and Transient elements
             MarkPunctuation("(", ")", ",");
-            MarkTransient(EXPR, STATEMENT, LINE_CONTENT_OPT, VARIABLE_OR_FUNCTION_EXPR, COMMENT_OPT); 
+            MarkTransient(EXPR, STATEMENT, LINE_CONTENT_OPT, VARIABLE_OR_FUNCTION_EXPR, COMMENT_OPT);
 
             this.LanguageFlags = LanguageFlags.NewLineBeforeEOF;
 
             lineNumber.ValidateToken += identifier_ValidateToken;
 
-      }
+        }
 
-        void identifier_ValidateToken(object sender, ParsingEventArgs e) {
-          if (e.Context.CurrentToken.ValueString.Length > 4)
-            e.Context.CurrentToken = e.Context.Source.CreateErrorToken("Identifier cannot be longer than 4 characters"); 
+        void identifier_ValidateToken(object sender, ParsingEventArgs e)
+        {
+            if (e.Context.CurrentToken.ValueString.Length > 4)
+                e.Context.CurrentToken = e.Context.Source.CreateErrorToken("Identifier cannot be longer than 4 characters");
         }//constructor
 
     }//class

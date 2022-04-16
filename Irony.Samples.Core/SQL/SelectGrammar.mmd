@@ -1,0 +1,39 @@
+﻿flowchart LR
+selectStatement[SELECT] --> selectFieldList
+selectFieldList --> selectFieldReference
+selectFieldReference --> selectFieldTableName[optional selectFieldTableName]
+selectFieldReference --> selectFieldDOT[optional DOT]
+selectFieldReference --> selectFieldFieldName
+
+
+FROM --> FromTableReferences
+FromTableReferences --> FromTableReference
+FromTableReference --> FromTableName
+FromTableReference --> FromTableAS[optional AS]
+FromTableReference --> FromTableAlias[optional FromTableAlias]
+
+INNERJOIN[INNER JOIN] --> IJoinTableReferences
+IJoinTableReferences --> IJoinTableReference
+IJoinTableReference --> IJoinTableName
+IJoinTableReference --> IJoinTableAS[optional AS]
+IJoinTableReference --> IJoinTableAlias[optional IJoinTableAlias]
+ON --> OnConditions[Conditions with and or]
+OnConditions --> OnCondition
+OnCondition --> OnConditionFieldReference[OnFieldReference OR]
+OnCondition --> OnConditionConstant[constant value]
+OnCondition --> OnOperator[=,<>, >=, etc] 
+OnCondition --> OnConditionFieldReference2[OnFieldReference OR]
+OnCondition --> OnConditionConstant2[constant value]
+
+WHERE --> WhereConditions[conditions with and or]
+WhereConditions --> WhereCondition
+WhereCondition --> WhereConditionFieldReference[OnFieldReference OR]
+WhereCondition --> WhereConditionConstant[constant value]
+WhereCondition --> WhereOperator[=,<>, >=, etc] 
+WhereCondition --> WhereConditionFieldReference2[OnFieldReference OR]
+WhereCondition --> WhereConditionConstant2[constant value]
+
+ORDERBY[ORDER BY] --> OrderByEntries
+OrderByEntries --> OrderByEntry
+OrderByEntry --> OrderByFieldReference
+OrderByEntry --> ASCOrDESC[ASC or DESC optional]

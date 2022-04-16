@@ -2,13 +2,10 @@
 using CommunityToolkit.Mvvm.Input;
 using Irony.Parsing;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Irony.SampleExplorer.Avalonia.ViewModels
 {
@@ -49,7 +46,7 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
         }
         private void LoadSampleGrammar()
         {
-            var sampleAssembly = typeof(Irony.Samples.SQL.SqlGrammar).Assembly;
+            var sampleAssembly = typeof(Irony.Samples.SQL.Sql89Grammar).Assembly;
             LoadAssemblysGrammars(sampleAssembly);
             // If you have additional assemblies, you could load them here
         }
@@ -125,18 +122,27 @@ namespace Irony.SampleExplorer.Avalonia.ViewModels
                           //parser.Context.SetOption(ParseOptions.TraceParser, chkParserTrace.Checked);
             try
             {
-                parser.Parse(ParseText, "<source>");
+                parser.Parse(ParseText.Trim(), "<source>");
             }
             catch (Exception ex)
             {
-                _errorsText = ex.Message;
+                ErrorsText = ex.Message;
                 //gridCompileErrors.Rows.Add(null, ex.Message, null);
                 throw;
             }
             finally
             {
-                ParseTree.Add(TreeNodeData.FromParseTree(parser.Context.CurrentParseTree));
-
+                if (!parser.Context.HasErrors)
+                {
+                    ParseTree.Add(TreeNodeData.FromParseTree(parser.Context.CurrentParseTree));
+                }
+                else
+                {
+                    var sb = new StringBuilder();
+                    foreach (var line in parser.Context.CurrentParseTree.ParserMessages.ToArray().Select(i => i.Message))
+                        sb.AppendLine(line);
+                    ErrorsText = sb.ToString();
+                }
                 //ShowCompilerErrors();
                 //if (chkParserTrace.Checked)
                 //{
